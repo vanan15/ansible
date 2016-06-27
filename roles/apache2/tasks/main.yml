@@ -1,6 +1,6 @@
 ---
-- name: refresh repo
-  apt: update_cache=yes
+#- name: refresh repo
+#  apt: update_cache=yes
 
 - name: install required packages
   apt: name={{item}}
