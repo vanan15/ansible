@@ -1,6 +1,6 @@
 ---
 - name: pull source code
-  git: repo=ssh://git@github.com/vanan15/testrepo.git dest=/var/testrepo accept_hostkey=yes
+  git: repo=https://github.com/vanan15/testrepo.git dest=/var/testrepo
 
 - name: make symlink to source code
   file: src=/var/testrepo/public dest=/var/www state=link
