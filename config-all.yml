@@ -1,0 +1,8 @@
+---
+- name: configure localhost
+  hosts: localhost
+  connection: local
+  gather_facts: no
+
+  roles:
+    - apache2
