@@ -6,3 +6,4 @@
 
   roles:
     - apache2
+    - deploy
