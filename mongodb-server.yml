@@ -1,0 +1,11 @@
+- name: work on host CMS lamp53
+  hosts: tag_Role_mongodb
+  remote_user: "{{user | default('ubuntu')}}"
+  become: yes
+  gather_facts: yes
+
+  vars_files:
+    - vars/common.yml
+
+  roles:
+    - mongodb
