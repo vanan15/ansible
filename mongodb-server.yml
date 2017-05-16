@@ -1,6 +1,6 @@
-- name: work on host CMS lamp53
+- name: work on host mongodb server
   hosts: tag_Role_mongodb
-  remote_user: "{{user | default('ubuntu')}}"
+  remote_user: ubuntu
   become: yes
   gather_facts: yes
 

@@ -1,0 +1,9 @@
+sec_group:
+  aws0: public-http
+  aws1: open-ssh-http
+ami:
+  aws0: ami-efd0428f
+  aws1: ami-efd0428f
+subnet:
+  aws0: subnet-f6c55e92
+  aws1: subnet-b85e15df

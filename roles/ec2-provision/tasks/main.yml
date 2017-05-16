@@ -1,0 +1,19 @@
+- name: provision exactly {{count|default('1')|int}} ec2 in aws_account {{aws_account}}
+  ec2:
+    key_name: anaws0-oregon
+    group: "{{sec_group[aws_account]}}"
+    instance_type: t2.micro
+    image: "{{ami[aws_account]}}"
+    wait: yes
+    wait_timeout: 500
+    exact_count: "{{count|default('1')|int}}"
+    instance_tags: 
+      Name: "{{role}}"       
+      Role: "{{role}}"
+    count_tag:
+      Role: "{{role}}"
+    monitoring: no
+    vpc_subnet_id: "{{subnet[aws_account]}}"
+    assign_public_ip: yes
+    profile: "{{aws_account}}"
+    region: "{{aws_region}}"
