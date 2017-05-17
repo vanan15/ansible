@@ -1,0 +1,11 @@
+- name: import the repo
+  shell: "curl -sL https://deb.nodesource.com/setup_6.x | bash -"
+  args:
+    creates: /etc/apt/sources.list.d/nodesource.list
+
+- name: install packages
+  apt:
+    name: "{{item}}"
+  with_items:
+    - nodejs
+    - build-essential
