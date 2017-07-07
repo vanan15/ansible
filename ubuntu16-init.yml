@@ -1,0 +1,22 @@
+---
+- name: bootstrap Python 2.x for new OS
+  hosts: "{{hostaddr}}"
+  remote_user: "{{user}}"
+  become: yes
+  gather_facts: no
+
+  tasks:
+    - debug: msg="Working on init instance"
+    - raw: "if ! which python2.7; then apt-get update -qqy && apt-get install -y python; fi"
+
+- name: continue install packages
+  hosts: "{{hostaddr}}"
+  remote_user: "{{user}}"
+  become: yes
+  gather_facts: yes
+
+  vars_files:
+    - vars/common.yml
+
+  roles:
+    - ubuntu16-common

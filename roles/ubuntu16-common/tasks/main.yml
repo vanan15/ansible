@@ -1,0 +1,22 @@
+---
+- name: install ubuntu packages
+  apt:
+    name: "{{item}}"
+    state: present
+    update_cache: yes
+    cache_valid_time: 3600
+  with_items:
+    - build-essential
+    - libssl-dev
+    - libffi-dev
+    - python-dev
+    - python-pip
+
+- name: install pip packages
+  pip:
+    name: "{{item}}"
+  with_items:
+    - boto
+    - boto3
+    - awscli
+    - ansible
